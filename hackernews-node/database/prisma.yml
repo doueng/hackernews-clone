@@ -1,6 +1,6 @@
-#endpoint: ''
 endpoint: https://eu1.prisma.sh/douglas-engstrand-64764e/database/dev
-
 datamodel: datamodel.graphql
-
 secret: mysecret123
+hooks:
+  post-deploy:
+    - graphql get-schema --project database
